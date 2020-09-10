@@ -1,0 +1,14 @@
+<h1>Create new Article</h1>
+
+<form action="/articles" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <label for="title"></label>
+  <input type="text" placeholder="title" id="title" name="title">
+  <br/>
+  <br/>
+  <label for="description"></label>
+  <input type="text" placeholder="description" id="description" name="description">
+  <br/>
+  <br/>
+  <button type="submit">click me!</button>
+</form>
