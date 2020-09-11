@@ -1,5 +1,15 @@
 <h1>Create new Article</h1>
 
+<% if @new_article.errors.any? %>
+<h2> Error ! </h2>
+    <ul>
+        <% @new_article.errors.full_messages.each do |msg| %> 
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+    <br>
+<% end %>
+
 <form action="/articles" method="post">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   <label for="title"></label>

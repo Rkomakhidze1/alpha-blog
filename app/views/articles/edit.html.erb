@@ -1,0 +1,28 @@
+<h1>Update an Article</h1>
+
+
+<% if @article.errors.any? %>
+<h2> Error ! </h2>
+    <ul>
+        <% @article.errors.full_messages.each do |msg| %> 
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+    <br>
+<% end %>
+
+<%= form_with(url: "/articles/" + params[:id], method: "patch") do %>
+  <%= label_tag(:title) %>
+  <br>
+  <%= text_field_tag(:title, @article[:title]) %>
+  <br>
+  <br>
+  <%= label_tag(:description) %>
+  <br>
+  <%= text_field_tag(:description, @article[:description]) %>
+  <br>
+  <br>
+  <%= submit_tag("click me") %>
+  <br>
+  <br>
+<% end %>

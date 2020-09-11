@@ -8,11 +8,30 @@ class ArticlesController < ApplicationController
     end
 
     def new
+        @new_article = Article.new
     end
 
     def create
         @new_article = Article.new(title: params[:title], description: params[:description])
-        @new_article.save
-        render json: {article: @new_article}
+        if @new_article.save
+            redirect_to @new_article
+        else 
+            render "new"
+        end
+        
+    end
+
+    def edit 
+        @article = Article.find(params[:id])
+    end
+
+    def update
+        @article = Article.find(params[:id])
+        
+        if @article.update(title: params[:title], description: params[:description])
+            redirect_to @article
+        else
+            render "edit"
+        end
     end
 end
