@@ -9,6 +9,7 @@ class User < ApplicationRecord
                         uniqueness: {case_sensitive: false}, 
                         format: {with: VALID_EMAIL_REGEX}
     validates :username, presence: true, 
-                            uniqueness: {case_sensitive: false}
+                            uniqueness: {case_sensitive: false},
+                            length: {minimum: 3, maximum: 300}
     
 end
