@@ -2,6 +2,7 @@
 
 <% @articles.each do |article| %>
         <h2><%= article.title %></h2>
-        <p><%= article.description %></p>
+        <p><%= article.description %> ----- <%= link_to "Delete", articles_path + "/" + article.id.to_s, method: :delete %>  <%= link_to "Show", "#{articles_path}/#{article.id}" %></p>
+
    <% end %> 
  
