@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  root "pages#home"
-  get "about", to: "pages#about"
+  root "users#index"
   resources :articles
   resources :users
   post "login", to: "sessions#create"
