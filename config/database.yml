@@ -18,7 +18,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: dbTest2
+  database: test
   pool: 5
   username: postgres
   password: Bubuka777
